@@ -28,6 +28,15 @@ var app = {
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
+
+        document.querySelector('#showHideButton').addEventListener('click', function() {
+            console.log('clicked!');
+
+            const textBox = document.querySelector('#textBox');
+            console.log(`textBoxValues(before): ${textBox.className}`);
+            textBox.classList.toggle('hidden');
+            console.log(`textBoxValues(after): ${textBox.className}`);
+        });
     },
 
     // Update DOM on a Received Event
